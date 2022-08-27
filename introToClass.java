@@ -39,6 +39,25 @@ public void deleteItem( int index)
          }       
     }
 }
+
+public void searchItem(int item)
+{
+for(int i =0;i<count ;i++)
+{
+if(items[i]==item)
+{
+   System.out.print(i+" ");
+ 
+   
+}
+
+
+
+
+
+
+}
+}
     public void print()
     {
       for(int i=0;i<count;i++)
@@ -62,9 +81,10 @@ public void deleteItem( int index)
          intro.setItems(3);
          intro.setItems(1);
          intro.setItems(3);
-         intro.print();
-         intro.deleteItem(1);
         intro.print();
+        intro.deleteItem(1);
+        intro.print();
+        intro.searchItem(3);
 
 
     }
