@@ -46,18 +46,49 @@ for(int i =0;i<count ;i++)
 {
 if(items[i]==item)
 {
-   System.out.print(i+" ");
- 
-   
+   System.out.print(i+" ");}}
+}
+public void insertAt(int item, int index)
+{
+items[index]= item;
 }
 
+public void intersect(int [] Arr)
+{ 
 
-
-
-
-
+    for(int i=0;i<count;i++)
+    {
+         for(int j=0;j<Arr.length;j++)
+         {
+          
+            if(items[i]==Arr[j])
+            {
+                System.out.println(items[i]); 
+            }
+         }
+    }
 }
+public void reverse()
+{
+    int [] reverseArr= new int[count];
+
+    for(int i=0;i<count;i++)
+    {  
+        reverseArr[i]= items[count-(i+1)];
+    }
+
+    items=reverseArr;
+    
 }
+public int max(){
+
+  
+    int max=items[0];
+    for(int i=0; i<count;i++)
+    { if(max<items[i])
+        max= items[i]; } 
+        return max;
+      }
     public void print()
     {
       for(int i=0;i<count;i++)
@@ -65,7 +96,7 @@ if(items[i]==item)
         System.out.print("value of arrays:"+ items[i]);
         System.out.println();
       }
-      System.out.println(count);
+      
     }
 
     public static void main(String args[])
@@ -75,16 +106,20 @@ if(items[i]==item)
          intro.setItems(4);
          intro.setItems(3);
          intro.setItems(1);
-         intro.setItems(3);
-         intro.setItems(1);
-         intro.setItems(1);
-         intro.setItems(3);
-         intro.setItems(1);
-         intro.setItems(3);
+         intro.setItems(2);
+         intro.setItems(8);
         intro.print();
         intro.deleteItem(1);
-        intro.print();
+       intro.print();
         intro.searchItem(3);
+       System.out.println("Largest number in array"+ intro.max());
+
+       int [] ArrayNew = {2,3,6};
+
+       intro.intersect(ArrayNew);
+       intro.reverse();
+    intro.insertAt(67, 0);
+       intro.print();
 
 
     }
